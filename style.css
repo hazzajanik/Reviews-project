@@ -75,9 +75,11 @@ body{
 
 #greater-than{
     padding-left: 6px;
+    cursor: pointer;
 }
 #less-than{
     padding-right: 6px;
+    cursor: pointer;
 }
 .btn{
     padding: 3px;

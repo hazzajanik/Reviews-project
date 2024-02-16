@@ -51,7 +51,7 @@ const lessThan = document.getElementById("less-than");
 
 // functionality part
 
-let itemNmbr  = 3;
+let itemNmbr  = 0;
 
 
 window.addEventListener("DOMContentLoaded",function(){
@@ -60,7 +60,9 @@ window.addEventListener("DOMContentLoaded",function(){
   reviewerName.innerText = loadedItem.name;
   reviewerJob.innerText = loadedItem.job;
   reviewerInfo.innerText = loadedItem.text;
+  showPerson(itemNmbr);
 });
+
 
 randomBtn.addEventListener("click",function(){
   const nmbr = Math.floor(Math.random() * reviews.length);
@@ -71,6 +73,25 @@ randomBtn.addEventListener("click",function(){
   reviewerInfo.innerText = loadedItem.text;
 });
 
+
+function showPerson(person){
+  const loadedItem = reviews[person];
+  reviewerImage.src = loadedItem.img;
+  reviewerName.innerText = loadedItem.name;
+  reviewerJob.innerText = loadedItem.job;
+  reviewerInfo.innerText = loadedItem.text;
+};
+
+
+greaterThan.addEventListener('click',function(){
+  itemNmbr++;
+  if(itemNmbr < reviews.length){
+    showPerson(itemNmbr);
+  }else{
+    itemNmbr = 0;
+    showPerson(itemNmbr);
+  }
+});
 
 
 
