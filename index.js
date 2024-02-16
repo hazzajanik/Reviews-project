@@ -83,6 +83,7 @@ function showPerson(person){
 };
 
 
+
 greaterThan.addEventListener('click',function(){
   itemNmbr++;
   if(itemNmbr < reviews.length){
@@ -92,6 +93,18 @@ greaterThan.addEventListener('click',function(){
     showPerson(itemNmbr);
   }
 });
+
+
+
+lessThan.addEventListener('click',function(){
+  if(itemNmbr>0){
+    itemNmbr--;
+    showPerson(itemNmbr);
+  }else{
+    itemNmbr = 4;
+    showPerson(itemNmbr);
+  }
+})
 
 
 
